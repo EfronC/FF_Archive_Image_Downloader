@@ -1,0 +1,48 @@
+{
+  "manifest_version": 2,
+  "name": "Archive Image Downloader",
+  "version": "0.0.3",
+  "description": "Click a link to download every image in a thread!",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/icon16.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://boards.fireden.net/*/thread/*",
+        "https://boards.fireden.net/*/thread/*",
+        "http://desuarchive.org/*/thread/*",
+        "https://desuarchive.org/*/thread/*",
+        "http://archived.moe/*/thread/*",
+        "https://archived.moe/*/thread/*",
+        "http://archive.nyafuu.org/*/thread/*",
+        "https://archive.nyafuu.org/*/thread/*",
+        "http://thebarchive.com/*/thread/*",
+        "https://thebarchive.com/*/thread/*",
+        "http://archiveofsins.com/*/thread/*",
+        "https://archiveofsins.com/*/thread/*"],
+      "js": ["init.js"]
+    },
+    {
+      "matches": [
+        "http://4archive.org/board/*/thread/*",
+        "https://4archive.org/board/*/thread/*",
+        "http://yuki.la/*",
+        "https://yuki.la/*"],
+      "js": ["chan.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["downloader.js"]
+  },
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "notifications"
+  ]
+}
